@@ -1,5 +1,5 @@
 SRC_NAME = htop-3.0.2
-SRC_URL = https://github.com/liucong0A0/rt-n56u/blob/master/trunk/user/htop/htop-3.0.2.tar
+SRC_URL = https://dev-image.pettyb.com/code/htop-3.0.2.tar.gz
 THISDIR = $(shell pwd)
 
 all: download_test extract_test config_test
@@ -7,12 +7,12 @@ all: download_test extract_test config_test
 
 download_test:
 	( if [ ! -f $(SRC_NAME).tar.gz ]; then \
-		wget -t5 --timeout=20 --no-check-certificate -O $(SRC_NAME).tar $(SRC_URL); \
+		wget -t5 --timeout=20 --no-check-certificate -O $(SRC_NAME).tar.gz $(SRC_URL); \
 	fi )
 
 extract_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
-		tar zxf $(SRC_NAME).tar; \
+		tar zxf $(SRC_NAME).tar.gz; \
 	fi )
 
 config_test:
